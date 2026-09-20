@@ -1,6 +1,6 @@
-/* =========================
+/* ========================================
    RESET
-========================= */
+======================================== */
 
 * {
     margin: 0;
@@ -20,14 +20,13 @@ body {
 
 img {
     max-width: 100%;
-    height: auto;
     display: block;
 }
 
 
-/* =========================
+/* ========================================
    HEADER
-========================= */
+======================================== */
 
 header {
     display: flex;
@@ -60,9 +59,9 @@ nav a:hover {
 }
 
 
-/* =========================
-   SEMUA SECTION
-========================= */
+/* ========================================
+   SECTION
+======================================== */
 
 section {
     padding: 60px 7%;
@@ -74,24 +73,27 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    HOME
-========================= */
+======================================== */
 
 .home {
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 50px;
 
     align-items: center;
+}
 
-    max-width: 1200px;
+.home h1 {
+    font-size: 60px;
+}
 
-    margin: 0 auto;
+.home h2 {
+    color: #087cf5;
+    font-size: 30px;
 }
 
 .home p {
@@ -102,20 +104,10 @@ section > h2 {
     margin: 15px 0;
 }
 
-.home h1 {
-    font-size: 60px;
-}
 
-.home h2 {
-    color: #087cf5;
-
-    font-size: 30px;
-}
-
-
-/* =========================
+/* ========================================
    BUTTON
-========================= */
+======================================== */
 
 .button {
     display: inline-block;
@@ -138,9 +130,9 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    FOTO UTAMA
-========================= */
+======================================== */
 
 .foto {
     width: 100%;
@@ -149,8 +141,7 @@ section > h2 {
 
     height: 350px;
 
-    /* FOTO NAIK 30px */
-    margin: -50px auto 0;
+    margin: 0 auto;
 
     overflow: hidden;
 
@@ -165,39 +156,47 @@ section > h2 {
     border-radius: 10px;
 }
 
+
+/* FOTO DI DALAM KOTAK */
+
 .foto img {
     width: 100%;
 
     height: 100%;
 
+    /*
+       FOTO TETAP MEMENUHI KOTAK
+       DAN TIDAK BERANTAKAN
+    */
     object-fit: cover;
 
-    object-position: center;
+    /*
+       ISI FOTO DIGESER KE ATAS
+       tanpa memindahkan kotaknya
+    */
+    object-position: center 20%;
 
     border-radius: 10px;
 }
 
 
-/* =========================
+/* ========================================
    FOTO KECIL
-========================= */
+======================================== */
 
 .kecil {
     height: 180px;
 }
 
 
-/* =========================
+/* ========================================
    TENTANG SAYA
-========================= */
+======================================== */
 
 .about {
     display: grid;
 
-    grid-template-columns:
-        220px
-        1fr
-        1fr;
+    grid-template-columns: 220px 1fr 1fr;
 
     gap: 30px;
 
@@ -217,15 +216,14 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    KEAHLIAN
-========================= */
+======================================== */
 
 .skills {
     display: grid;
 
-    grid-template-columns:
-        repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
     gap: 15px;
 }
@@ -245,15 +243,14 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    PROJECT
-========================= */
+======================================== */
 
 .projects {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 }
@@ -267,6 +264,11 @@ section > h2 {
 
     background: white;
 }
+
+
+/* ========================================
+   GAMBAR PROJECT
+======================================== */
 
 .gambar {
     height: 150px;
@@ -296,7 +298,10 @@ section > h2 {
     height: 100%;
 
     object-fit: cover;
+
+    object-position: center;
 }
+
 
 .card h3 {
     margin-bottom: 10px;
@@ -317,9 +322,9 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    CONTACT
-========================= */
+======================================== */
 
 #contact {
     background: #f7faff;
@@ -332,9 +337,9 @@ section > h2 {
 }
 
 
-/* =========================
+/* ========================================
    FOOTER
-========================= */
+======================================== */
 
 footer {
     text-align: center;
@@ -347,9 +352,9 @@ footer {
 }
 
 
-/* =========================
+/* ========================================
    TABLET
-========================= */
+======================================== */
 
 @media (max-width: 1000px) {
 
@@ -362,20 +367,18 @@ footer {
     }
 
     .skills {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .projects {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-/* =========================
+/* ========================================
    HP
-========================= */
+======================================== */
 
 @media (max-width: 800px) {
 
@@ -420,8 +423,11 @@ footer {
 
         height: 300px;
 
-        /* DI HP TETAP NAIK */
-        margin: -20px auto 0;
+        margin: 0 auto;
+    }
+
+    .foto img {
+        object-position: center 20%;
     }
 
 
@@ -445,8 +451,7 @@ footer {
     /* SKILLS */
 
     .skills {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 
@@ -458,9 +463,9 @@ footer {
 }
 
 
-/* =========================
+/* ========================================
    HP KECIL
-========================= */
+======================================== */
 
 @media (max-width: 500px) {
 
@@ -482,9 +487,10 @@ footer {
 
     .foto {
         height: 250px;
+    }
 
-        /* FOTO NAIK 15px DI HP KECIL */
-        margin: -15px auto 0;
+    .foto img {
+        object-position: center 20%;
     }
 
     .skills {
