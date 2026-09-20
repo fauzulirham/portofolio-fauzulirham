@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,8 +18,16 @@ body {
     background: white;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     display: flex;
@@ -48,7 +60,9 @@ nav a:hover {
 }
 
 
-/* SEMUA SECTION */
+/* =========================
+   SEMUA SECTION
+========================= */
 
 section {
     padding: 60px 7%;
@@ -60,20 +74,31 @@ section > h2 {
 }
 
 
-/* HOME */
+/* =========================
+   HOME
+========================= */
 
 .home {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 50px;
 
     align-items: center;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
 }
 
 .home p {
     color: #667085;
+
     line-height: 1.7;
+
     margin: 15px 0;
 }
 
@@ -83,8 +108,14 @@ section > h2 {
 
 .home h2 {
     color: #087cf5;
+
     font-size: 30px;
 }
+
+
+/* =========================
+   BUTTON
+========================= */
 
 .button {
     display: inline-block;
@@ -102,38 +133,70 @@ section > h2 {
     text-decoration: none;
 }
 
+.button:hover {
+    background: #066bd4;
+}
 
-/* FOTO */
 
-.foto,
-.gambar {
+/* =========================
+   FOTO UTAMA
+========================= */
+
+.foto {
+    width: 100%;
+
+    max-width: 550px;
+
+    height: 350px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     background: #eef1f6;
 
-    color: #aab3c2;
-
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
-.foto {
-    height: 280px;
-    font-size: 50px;
+.foto img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 10px;
 }
+
+
+/* =========================
+   FOTO KECIL
+========================= */
 
 .kecil {
     height: 180px;
 }
 
 
-/* TENTANG SAYA */
+/* =========================
+   TENTANG SAYA
+========================= */
 
 .about {
     display: grid;
 
-    grid-template-columns: 220px 1fr 1fr;
+    grid-template-columns:
+        220px
+        1fr
+        1fr;
 
     gap: 30px;
 
@@ -142,21 +205,26 @@ section > h2 {
 
 .about p {
     color: #667085;
+
     line-height: 1.7;
 }
 
 .data {
     border-left: 1px solid #ddd;
+
     padding-left: 25px;
 }
 
 
-/* KEAHLIAN */
+/* =========================
+   KEAHLIAN
+========================= */
 
 .skills {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns:
+        repeat(5, 1fr);
 
     gap: 15px;
 }
@@ -171,15 +239,20 @@ section > h2 {
     border-radius: 6px;
 
     font-weight: bold;
+
+    background: white;
 }
 
 
-/* PROJECT */
+/* =========================
+   PROJECT
+========================= */
 
 .projects {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 20px;
 }
@@ -190,6 +263,8 @@ section > h2 {
     border: 1px solid #ddd;
 
     border-radius: 6px;
+
+    background: white;
 }
 
 .gambar {
@@ -197,7 +272,29 @@ section > h2 {
 
     margin-bottom: 15px;
 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eef1f6;
+
+    color: #aab3c2;
+
+    border-radius: 5px;
+
     font-size: 35px;
+
+    overflow: hidden;
+}
+
+.gambar img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
 }
 
 .card h3 {
@@ -219,7 +316,9 @@ section > h2 {
 }
 
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 #contact {
     background: #f7faff;
@@ -232,7 +331,9 @@ section > h2 {
 }
 
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -245,7 +346,35 @@ footer {
 }
 
 
-/* HP */
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .home {
+        gap: 30px;
+    }
+
+    .home h1 {
+        font-size: 50px;
+    }
+
+    .skills {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .projects {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================
+   HP
+========================= */
 
 @media (max-width: 800px) {
 
@@ -263,13 +392,36 @@ footer {
         justify-content: center;
     }
 
+
+    /* HOME */
+
     .home {
         grid-template-columns: 1fr;
+
+        gap: 30px;
     }
 
     .home h1 {
         font-size: 45px;
     }
+
+    .home h2 {
+        font-size: 25px;
+    }
+
+
+    /* FOTO */
+
+    .foto {
+        width: 100%;
+
+        max-width: 500px;
+
+        height: 300px;
+    }
+
+
+    /* ABOUT */
 
     .about {
         grid-template-columns: 1fr;
@@ -285,14 +437,54 @@ footer {
         padding-top: 20px;
     }
 
+
+    /* SKILLS */
+
     .skills {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 
-    .foto img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 5px;
+    /* PROJECT */
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 500px) {
+
+    section {
+        padding: 45px 5%;
+    }
+
+    header {
+        padding: 18px 5%;
+    }
+
+    .home h1 {
+        font-size: 38px;
+    }
+
+    .home h2 {
+        font-size: 22px;
+    }
+
+    .foto {
+        height: 250px;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
 }
