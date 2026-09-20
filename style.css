@@ -149,7 +149,8 @@ section > h2 {
 
     height: 350px;
 
-    margin: 0 auto;
+    /* FOTO NAIK 30px */
+    margin: -30px auto 0;
 
     overflow: hidden;
 
@@ -418,6 +419,9 @@ footer {
         max-width: 500px;
 
         height: 300px;
+
+        /* DI HP TETAP NAIK */
+        margin: -20px auto 0;
     }
 
 
@@ -478,6 +482,9 @@ footer {
 
     .foto {
         height: 250px;
+
+        /* FOTO NAIK 15px DI HP KECIL */
+        margin: -15px auto 0;
     }
 
     .skills {
